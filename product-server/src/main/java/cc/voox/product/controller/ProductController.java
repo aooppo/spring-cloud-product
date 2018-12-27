@@ -1,6 +1,5 @@
 package cc.voox.product.controller;
 
-import cc.voox.product.dao.ProductTypeDAO;
 import cc.voox.product.model.Product;
 import cc.voox.product.model.ProductType;
 import cc.voox.product.service.ProductService;
@@ -29,7 +28,7 @@ public class ProductController {
     private ProductTypeService productTypeService;
 
     @RequestMapping("list")
-    ResultVO<ProductsVO> list() {
+    public ResultVO<ProductsVO> list() {
         List<Product> ps = productService.findUpAll();
         Set<ProductType> pts = ps.stream().map(Product::getProductType).collect(Collectors.toSet());
         List<ProductsVO> productsVOS = new ArrayList<>();
@@ -55,7 +54,7 @@ public class ProductController {
     }
 
     @RequestMapping("findByIds")
-    List<ProductOutput> findByIds(Long ... ids) {
+    public List<ProductOutput> findByIds(Long ... ids) {
         List<ProductOutput> list = new ArrayList<>();
         productService.findAllByIdIn(ids).forEach(p -> {
             ProductOutput po = new ProductOutput();
