@@ -11,4 +11,5 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
-
+  jpa:
+    open-in-view: true
