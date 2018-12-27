@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-        <product.common.version>0.0.1-SNAPSHOT</product.common.version>
+        <project-common.version>0.0.1-SNAPSHOT</project-common.version>
     </properties>
 
 
@@ -52,7 +52,7 @@
         <dependency>
             <groupId>cc.voox</groupId>
             <artifactId>product-common</artifactId>
-            <version>${product.common.version}</version>
+            <version>${project-common.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
