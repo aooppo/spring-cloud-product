@@ -11,9 +11,9 @@ import cc.voox.product.vo.ProductsVO;
 import cc.voox.product.vo.ResultVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -52,11 +52,16 @@ public class ProductController {
 
         return ResultUtils.success(productsVOS);
     }
+    @RequestMapping("msg")
+    public String msg() {
+        return LocalDateTime.now().toString() + " product server";
+    }
 
-    @RequestMapping("findByIds")
-    public List<ProductOutput> findByIds(Long ... ids) {
+    @PostMapping("findByIds")
+    public List<ProductOutput> findByIds(@RequestBody List<Long> ids) {
+
         List<ProductOutput> list = new ArrayList<>();
-        productService.findAllByIdIn(ids).forEach(p -> {
+        productService.findAllByIdIn(ids.toArray(new Long[ids.size()])).forEach(p -> {
             ProductOutput po = new ProductOutput();
             BeanUtils.copyProperties(p, po);
             list.add(po);

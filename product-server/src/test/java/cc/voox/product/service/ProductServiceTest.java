@@ -13,7 +13,7 @@ public class ProductServiceTest extends ProductServerApplicationTests {
 
     @Autowired
     ProductService productService;
-    @Test
+//    @Test
     public void findAllByIdIn() {
         List<Product> ps = productService.findAllByIdIn(32L, 33L);
         System.out.println(ps);

@@ -51,7 +51,7 @@
         <dependency>
             <groupId>cc.voox</groupId>
             <artifactId>product-common</artifactId>
-            <version>${product-common.version}</version>
+            <version>${product.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

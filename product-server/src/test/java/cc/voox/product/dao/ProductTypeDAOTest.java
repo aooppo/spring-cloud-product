@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class ProductTypeDAOTest extends ProductServerApplicationTests {
     @Autowired
     private ProductTypeDAO productTypeDAO;
-    @Test
+//    @Test
     public void saveTypes() {
 
         ProductType pt = new ProductType();
@@ -31,7 +31,7 @@ public class ProductTypeDAOTest extends ProductServerApplicationTests {
         productTypeDAO.save(pt3);
 
     }
-    @Test
+//    @Test
     public void update() {
         Optional<ProductType> pt = productTypeDAO.findById(17L);
         pt.get().setName("compu");

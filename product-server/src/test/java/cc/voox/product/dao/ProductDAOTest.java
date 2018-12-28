@@ -20,7 +20,7 @@ public class ProductDAOTest extends ProductServerApplicationTests {
     @Autowired
     private ProductTypeDAO productTypeDAO;
 
-    @Test
+//    @Test
     public void init() {
         ProductType pt1 = productTypeDAO.findByNameContaining("compu");
         Product p1 = new Product();

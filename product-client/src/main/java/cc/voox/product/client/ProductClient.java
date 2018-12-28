@@ -4,6 +4,7 @@ import cc.voox.product.vo.ProductOutput;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -11,5 +12,8 @@ import java.util.List;
 public interface ProductClient {
 
     @PostMapping("findByIds")
-    List<ProductOutput> findByIds(@RequestBody List<String> ids);
+    public List<ProductOutput> findByIds(@RequestBody List<Long> ids);
+
+    @RequestMapping("msg")
+    public String hello();
 }
